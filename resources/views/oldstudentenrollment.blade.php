@@ -6,27 +6,14 @@
             font-family: Arial, sans-serif;
         }
 
-        .header-container {
-        display: flex; 
-        align-items: center; 
-        background-color: #0c3b6d; 
-        color: white;
-        padding: 10px; 
-    }
+  
 
         #main {
             padding: 20px;
         }
 
-        .w3-teal {
-            background-color: #007bff;
-        }
 
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            color: white;
-        }
+     
 
         h2 {
             margin-bottom: 20px;
@@ -98,13 +85,38 @@
                 font-size: 1rem;
             }
         }
+        .header-container {
+            display: flex; 
+            align-items: center; 
+            background-color: rgba(8, 16, 66, 1); 
+            color: white;
+            padding: 10px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+        
+        
+        }
+        h1{
+            text-align: center; 
+            margin: 20px 0; 
+            font-size:17px;
+          
+        }
+        h2{
+            text-align: left; 
+            padding:15px;
+            margin: 20px 0; 
+            font-size:20px;
+            color:white;
+            background: rgba(8, 16, 66, 1);
+        }
     </style>
 
-    <div id="main">
-        <div class="header-container">
-        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
-        <h1 class="text-light">Student Enrollment</h1>
+   
+<div class="header-container ">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <h1>Student Enrollment</h1>
     </div>
+    <div id="main" onclick="w3_close()">
         
         <section class="container my-5">
     

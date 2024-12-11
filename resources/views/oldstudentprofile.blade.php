@@ -1,23 +1,16 @@
 @include('templates.oldstudentheader')
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<div id="main">
-    <div class="header-container">
-        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
-        <h1 class="text-light">Student Profile</h1>
-    </div>
-</div>
+<!-- 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
 <style>
-    .header-container {
+        .header-container {
         display: flex; 
         align-items: center; 
-        background-color: #0c3b6d; 
+        background-color: rgba(8, 16, 66, 1); 
         color: white;
         padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);  
     }
-
     .profile-image {
         width: 180px;
         height: 180px;
@@ -34,13 +27,45 @@
         font-size: 24px;
         cursor: pointer;
     }
-
+    .card{
+        box-shadow:0 2px 10px rgba(0, 0, 0, 0.3);  
+    }
     h1 {
         margin: 0; 
-        font-size: 24px;
+        font-size: 17px;
     }
+    .btnback{
+            background-color:rgba(8, 16, 66, 1);
+            color:white;
+            border:none;
+            border-radius:5px;
+            margin:20px 50px;
+            box-shadow:0 2px 10px rgba(0, 0, 0, 0.5); 
+            padding:5px;
+            
+        }
+        .btnback:hover{
+            background-color:rgba(9, 23, 128);
+            text-decoration:none;
+        }
+        .btnback a{
+            color:white;
+            padding:15px;
+            text-decoration:none;
+        }
+
 </style>
 
+
+<div class="header-container"> 
+            <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
+            <h1>Student Profile</h1> 
+        </div>
+        <div class="backbtn">
+        <button type="button" class="btnback"><a href="/studentdashboard">Back to Dashboard</a></button>
+    </div>
+        
+        <div id="main" onclick="w3_close()">
 <section class="container-fluid py-5 bg-custom">
     <div class="row justify-content-center">
         <div class="col-md-9 col-lg-7 col-xl-6">

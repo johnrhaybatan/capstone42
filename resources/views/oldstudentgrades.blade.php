@@ -17,14 +17,15 @@
         border-radius: 8px;
         position: relative;
     }
-
     .header-container {
         display: flex; 
         align-items: center; 
-        background-color: #0c3b6d; 
+        background-color: rgba(8, 16, 66, 1); 
         color: white;
         padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
     }
+
 
     .nav-button {
         margin-right: 15px; 
@@ -144,11 +145,11 @@
     }
 </style>
 
-<div id="main" onclick="w3_close()">
-    <div class="header-container">
+<div class="header-container">
         <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
         <h2>Grades S.Y 2024-2025</h2>
     </div>
+    <div id="main" onclick="w3_close()">
 
     @if ($gradesApproved)
         <table class="table-primary">
@@ -199,13 +200,3 @@
 
 @include('templates.oldstudentfooter')
 
-<script>
-    function w3_open(event) {
-        event.stopPropagation();
-        document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-    }
-</script>

@@ -7,23 +7,25 @@
         margin: 0;
         padding: 0;
     }
-    #main {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0px;
-        background-color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        position: relative;
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color: white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);  
     }
+
 
     .header-container {
         display: flex; 
         align-items: center; 
-        background-color: #0c3b6d; 
+        background-color: rgba(8, 16, 66, 1); 
         color: white;
         padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);  
     }
+
 
     .nav-button {
         margin-right: 15px; 
@@ -31,7 +33,7 @@
 
     h1 {
         margin: 0; 
-        font-size: 24px;
+        font-size: 17px;
     }
 
     .content {
@@ -58,11 +60,12 @@
     }
 </style>
 
-<div id="main" onclick="w3_close(event)">
-    <div class="header-container"> 
+
+<div class="header-container"> 
         <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
         <h1>Student Class Load</h1> 
     </div>
+    <div id="main" onclick="w3_close()">
 
     <div class="content">
         <a href="{{ route('student.classload.pdf', ['student_id' => $student->id]) }}" class="btn btn-primary mb-3" target="_blank">
@@ -121,16 +124,3 @@
 </div>
 
 @include('templates.oldstudentfooter')
-
-<script>
-    function w3_open(event) {
-        event.stopPropagation();
-        document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close(event) {
-        
-        if (event && event.target.closest("#mySidebar")) return;
-        document.getElementById("mySidebar").style.display = "none";
-    }
-</script>

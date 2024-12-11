@@ -8,7 +8,7 @@
         padding: 0;
     }
 
-    #main {
+    /* #main {
         max-width: 100%;
         margin: 0 auto;
         padding: 0px;
@@ -16,27 +16,26 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         position: relative; 
-    }
+    } */
 
     .header-container {
         display: flex; 
         align-items: center; 
-        background-color: #0c3b6d; 
-        color: white;
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
         padding: 10px; 
-    }
-
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+            }
     .nav-button {
         margin-right: 15px; 
         margin-bottom: 4px;
     }
 
     h1 {
-        margin: 0; 
-        font-family: 'Arial', sans-serif;
-        font-size: 20px;
-    }
-
+            margin: 0; 
+            font-family: 'Arial', sans-serif;
+            font-size: 17px;
+        }
     h2 {
         font-weight: bold;
         margin: 20px 0 10px 0;
@@ -49,27 +48,67 @@
     }
 
     img {
-        max-width: 200px;
-        margin-bottom: 20px;
-    }
+            max-width: 100%; /* Make image responsive */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px;
+        }
 
-    ul, ol {
-        text-align: center;
-        margin: 0 auto;
-        padding: 0;
-        list-style-position: inside;
-    }
+        ul, ol {
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            list-style-position: inside;
+        }
 
-    li {
-        margin: 5px 0;
-    }
+        li {
+            margin: 5px 0;
+        }
+
+    
+      
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column; /* Stack items on smaller screens */
+                align-items: flex-start; /* Align items to the start */
+            }
+
+            h1 {
+                font-size: 18px; /* Adjust heading size */
+            }
+
+            .nav-button {
+                margin-bottom: 10px; /* Adjust button margin */
+            }
+
+            .content {
+                margin: 10px; /* Reduce margin on smaller screens */
+            }
+
+            ul, ol {
+                text-align: left; /* Align lists to the left on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 16px; /* Further reduce heading size */
+            }
+
+            h2 {
+                font-size: 18px; /* Adjust h2 size */
+            }
+
+            p {
+                font-size: 14px; /* Adjust paragraph size */
+            }
+        }
 </style>
 
-<div id="main" onclick="w3_close()">
-    <div class="header-container"> 
-        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
-        <h1>Student Dashboard</h1> 
-    </div>
+<div class="header-container"> 
+            <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
+            <h1>Student Dashboard</h1> 
+        </div>
+        <div id="main" onclick="w3_close()">
 
     <div class="content" style="text-align: center; margin: 20px;">
         <img src="{{ asset('image/uclogo.png') }}" alt="University Logo" style="max-width: 200px; margin-bottom: 20px;">
@@ -101,13 +140,4 @@
 
 @include('templates.oldstudentfooter')
 
-<script>
-    function w3_open(event) {
-        event.stopPropagation();
-        document.getElementById("mySidebar").style.display = "block";
-    }
 
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-    }
-</script>

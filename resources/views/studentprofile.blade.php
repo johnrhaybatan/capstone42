@@ -1,6 +1,6 @@
 @include('templates.studentheader')
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
 
 <style>
@@ -67,7 +67,7 @@
 
 <div class="header-container"> 
             <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
-            <h1>Student Dashboard</h1> 
+            <h1>Student Profile</h1> 
         </div>
         
         <div id="main" onclick="w3_close()">
