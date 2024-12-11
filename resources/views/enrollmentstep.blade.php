@@ -1,30 +1,39 @@
 @include('templates.studentheader')
-
 <style>
     body {
-        background-color: #f7f9fc;
+        background-color: white; /* Change to match dashboard */
         font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     #main {
-        padding: 20px;
+        padding: 0px; /* Added padding for spacing */
     }
-
-    .w3-teal {
-        background-color: #007bff;
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+        color: white;
+        padding: 10px; 
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 17px; /* Adjusted to match dashboard */
         margin: 0;
         color: white;
+        text-align: left; /* Align text to the left */
+        flex-grow: 1; /* Allow header to take available space */
     }
 
-    h2 {
-        margin-bottom: 20px;
-        font-size: 1.75rem;
-        color: #343a40;
-    }
+    h2{
+            /* background-color:rgba(8, 16, 66, 1); */
+            color:rgba(8, 16, 66, 1);
+            font-family: 'Arial', sans-serif;
+            font-size:24px;
+            padding:10px;
+        }
 
     .list-group {
         border-radius: 0.5rem;
@@ -52,12 +61,12 @@
     .fw-bold {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
-        color: #343a40;
+        color: #343a40; /* Consistent with dashboard */
     }
 
     .list-group-item p {
         font-size: 0.95rem;
-        color: #6c757d;
+        color: #6c757d; /* Consistent with dashboard */
     }
 
     .badge {
@@ -72,8 +81,8 @@
 
     /* Button styling */
     .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #0c3b6d; /* Change to match primary color */
+        border-color: #0c3b6d;
     }
 
     /* Responsive adjustments */
@@ -92,12 +101,11 @@
     }
 </style>
 
-<div id="main">
-    <div class="w3-teal ">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <h1 style="text-align: center; margin: 20px 0;">Student Enrollment</h1>
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
+        <h1>Student Enrollment</h1> 
     </div>
-    
+    <div id="main" onclick="w3_close()">
     <section class="container my-5">
  
         <div class="row">

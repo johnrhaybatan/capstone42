@@ -1,13 +1,74 @@
 @include('templates.studentheader')
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1 class="text-center text-light">STUDENT CLASS LOAD</h1>
-        </div>
+    #main {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0px; /* Added padding for spacing */
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between;
+        background-color: rgba(8, 16, 66, 1);  
+        color: white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+    }
+
+    .header-container h1 {
+        margin: 0; 
+        font-size: 17px;
+        flex-grow: 1; /* Allow header to take available space */
+        margin-right:83%;
+        text-align:center;
+       
+    }
+
+    .btn {
+        margin-bottom: 20px; /* Spacing below the button */
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem; /* Spacing between form groups */
+    }
+
+    .table th, .table td {
+        vertical-align: middle; /* Center content vertically */
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1; /* Light background on hover */
+    }
+
+    @media print {
+        .btn {
+            display: none; /* Hide buttons when printing */
+        }
+    }
+    .content{
+        text-align:center;
+        margin:20px 0;
+    }
+   
+</style>
+
+<div class="header-container"> 
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
+        <h1 class="text-center">Student Class Load</h1>
     </div>
-
+    <div id="main" onclick="w3_close()">
     <div class="container py-4">
         <a href="{{ route('student.classload.pdf', ['student_id' => $student->id]) }}" class="btn btn-primary mb-3" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
@@ -66,32 +127,3 @@
 
 @include('templates.studentfooter')
 
-<style>
-    /* Custom styles for the table */
-    .table th, .table td {
-        vertical-align: middle; /* Center content vertically */
-    }
-
-    .table-hover tbody tr:hover {
-        background-color: #f1f1f1; /* Light background on hover for web view */
-    }
-
-    .form-group {
-        margin-bottom: 1.5rem; /* Increased spacing between form groups */
-    }
-
-    /* Ensure print styles are well-defined */
-    @media print {
-        .btn {
-            display: none; /* Hide buttons when printing */
-        }
-    }
-
-    .bi-file-arrow-down {
-        transition: fill 0.2s ease;
-    }
-
-    .bi-file-arrow-down:hover {
-        fill: #0056b3; /* Change color on hover */
-    }
-</style>
