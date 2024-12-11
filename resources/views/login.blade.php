@@ -416,7 +416,8 @@
             beat.classList.add('beat');
             beat.style.left = Math.random() * 100 + 'vw';
             beat.style.animationDuration = Math.random() * 2 + 3 + 's';
-            beat.innerHTML = '&#9835;'; 
+            // beat.innerHTML = '&#9835;'; 
+            beat.innerHTML='&#10054;';
 
             beatContainer.appendChild(beat);
 
