@@ -3,25 +3,50 @@
 
 <style>
     body {
-        background-color: #f8f9fa;
+      
+        font-family: Arial, sans-serif; /* Consistent font */
     }
+
+    #main {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0; /* Added padding for spacing */
+        background-color: white;
+     
+        border-radius: 8px;
+    }
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+        color: white;
+        padding: 10px; 
+    }
+
+    .header-container h1 {
+        margin: 10px ; 
+        font-size: 17px; /* Increased font size for visibility */
+        flex-grow: 1; /* Allow header to take available space */
+        text-align: left; /* Center the header text */
+    }
+
 
     .form-container {
         background: white;
-        padding: 2rem;
+        padding: 1rem;
         border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 600px; /* Set a max width for the form */
-        margin: auto; /* Center the form */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        max-width: 50%; /* Set a max width for the form */
+        margin: 10px auto; /* Center the form with margin */
     }
 
-    .w3-container h1 {
-        margin-bottom: 1.5rem;
-        text-align: center;
-        margin-left:-80%;
-   
-        
-        
+    .text-center{
+        background-color:rgba(8, 16, 66, 1);
+        padding:10px;
+        color:white;
+        font-size: 24px;
     }
 
     .form-group {
@@ -96,16 +121,14 @@
         }
     }
 </style>
-
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>ASSESSMENTS</h1>
-        </div>
+<div class="header-container">
+        
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open(event)">&#9776;</button>
+        
+        <h1>Assessment</h1>
     </div>
-
-    <div class="container d-flex justify-content-center align-items-start" style="min-height: 80vh;">
+    <div id="main" onclick="w3_close()">
+    <div class="container" style="min-height: 80vh;">
         <div class="form-container">
             <h1 class="text-center">View Assessments</h1>
 
