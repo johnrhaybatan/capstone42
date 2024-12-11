@@ -118,7 +118,7 @@
     </div>
     <div id="main" onclick="w3_close()">
         
-        <section class="container my-5">
+        <!-- <section class="container my-5"> -->
     
             <div class="row">
                 <div class="col-12">

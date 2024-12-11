@@ -8,7 +8,7 @@
     }
 
     #main {
-        padding: 0px; /* Added padding for spacing */
+        padding: 20px; /* Added padding for spacing */
     }
     .header-container {
         display: flex; 
@@ -28,11 +28,12 @@
     }
 
     h2{
-            /* background-color:rgba(8, 16, 66, 1); */
-            color:rgba(8, 16, 66, 1);
-            font-family: 'Arial', sans-serif;
-            font-size:24px;
-            padding:10px;
+            text-align: left; 
+            padding:15px;
+            margin: 20px 0; 
+            font-size:20px;
+            color:white;
+            background: rgba(8, 16, 66, 1);
         }
 
     .list-group {
@@ -106,7 +107,7 @@
         <h1>Student Enrollment</h1> 
     </div>
     <div id="main" onclick="w3_close()">
-    <section class="container my-5">
+    <!-- <section class="container my-5"> -->
  
         <div class="row">
             <div class="col-12">
