@@ -22,45 +22,6 @@
             position: relative;
         }
 
-        #snow-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            font-size: 1rem;
-            color: white;
-            opacity: 0.10;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0.5;
-            }
-        }
-
-        .snowflake:nth-child(odd) {
-            animation-duration: 40s;
-            font-size: 1.2rem;
-        }
-
-        .snowflake:nth-child(even) {
-            animation-duration: 30s;
-            font-size: 0.8rem;
-        }
-
         .container {
             position: absolute;
             top: 50%;
@@ -293,6 +254,19 @@
     .beat:nth-child(even) {
         animation-duration: 7s;
     }
+    .btn.btn-secondary
+    {
+        background-color:rgba(186, 30, 24);
+        color:white;
+        border-radius:10px;
+        border:none;
+    }
+    .btn.btn-secondary:hover
+    {
+        background-color:rgba(112, 13, 9);
+        color:white;
+      
+    }
     </style>
 </head>
 
@@ -308,11 +282,10 @@
         <button id="pauseMusic" class="btn btn-secondary">Pause Music</button>
     </div>
 
-    {{-- <div id="snow-container"></div> --}}
     <div id="beat-container"></div>
 
     <img id="popoutImage" src="image/jose1.png" alt="Pop-out Image">
-    <div id="popoutText">Magpapasko na!</div>
+    <div id="popoutText">Merry Christmas!</div>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -358,23 +331,7 @@
     <script>
         const snowContainer = document.getElementById('snow-container');
 
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '&#10054;';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 7 + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-
-            snowContainer.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 10000);
-        }
-
-        setInterval(createSnowflake, 200);
+      
 
         const passwordInput = document.getElementById('password');
         const showPasswordCheckbox = document.getElementById('showPassword');
@@ -388,6 +345,7 @@
         });
 
         const audio = document.getElementById('backgroundMusic');
+        let toggleInterval;
 
         document.getElementById('playMusic').addEventListener('click', () => {
             audio.muted = false; 
@@ -397,21 +355,38 @@
 
         document.getElementById('pauseMusic').addEventListener('click', () => {
             audio.pause(); 
+            stopImageAndText();
         });
 
         const popoutImage = document.getElementById('popoutImage');
         const popoutText = document.getElementById('popoutText');
 
         function toggleImageAndText() {
-            popoutImage.style.opacity = 1; 
-            popoutText.style.opacity = 1; 
+            popoutImage.style.opacity = 1; // Show image
+            popoutText.style.opacity = 1; // Show text
             setTimeout(() => {
-                popoutImage.style.opacity = 0; 
-                popoutText.style.opacity = 0; 
-            }, 3000); 
+                popoutImage.style.opacity = 0; // Hide image
+                popoutText.style.opacity = 0; // Hide text
+            }, 3000); // Both shown for 3 seconds
+            
+            if (!toggleInterval) {
+                toggleInterval = setInterval(() => {
+                    popoutImage.style.opacity = 1;
+                    popoutText.style.opacity = 1;
+                    setTimeout(() => {
+                        popoutImage.style.opacity = 0; 
+                        popoutText.style.opacity = 0; 
+                    }, 3000);
+                }, 6000); // Repeat every 6 seconds
+            }
         }
 
-        setInterval(toggleImageAndText, 6000); 
+        function stopImageAndText() {
+            clearInterval(toggleInterval); // Stop the interval
+            toggleInterval = null; // Reset the interval variable
+            popoutImage.style.opacity = 0; // Hide image
+            popoutText.style.opacity = 0; // Hide text
+        }
 
 
 
