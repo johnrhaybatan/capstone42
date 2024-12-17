@@ -1,22 +1,35 @@
 @include('templates.principalheader')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
 <style>
     body {
-        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Light background */
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(8, 16, 66, 1);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+    h1 {
+        margin: 0; 
+        font-size: 20px;
     }
 
     .form-container {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 600px; /* Set a max width for the form */
-        margin: auto; /* Center the form */
-    }
-
-    h1 {
-        margin-bottom: 1.5rem;
+        width: 80%;
+        margin: auto; /* Centering the container */
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px; /* Spacing between sections */
     }
 
     .form-group {
@@ -29,10 +42,10 @@
 
     .subjects {
         margin-top: 10px;
-        display: none;
         border: 1px solid #ddd; /* Add a border around subject lists */
         padding: 10px;
         border-radius: 5px;
+        display: none; /* Initially hidden */
     }
 
     .checkbox-group div {
@@ -43,21 +56,33 @@
         margin-top: 1.5rem; /* Space above the button */
     }
 
-    .btn {
+    .btn-primary {
+        background-color: rgba(8, 16, 66, 1);
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
         width: 100%; /* Make the button full width */
-        padding: 10px; /* Increase button padding */
     }
+
+    .btn-primary:hover {
+        background-color: rgba(8, 16, 99, 1);
+    }
+    .headerh1{
+        font-size:17px;
+      
+    }
+    
 </style>
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>TEACHERS AND SUBJECTS</h1>
-        </div>
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open(event)">&#9776;</button>
+        <h1 class="headerh1">Teachers and Subjects</h1>
     </div>
-    <br>
-    <div class="container d-flex justify-content-center align-items-start" style="min-height: 80vh;">
+    <div id="main" onclick="w3_close()">
+    
+    <div class="container d-flex justify-content-center align-items-start" style="min-height: 60vh;">
         <div class="form-container">
             <h1 class="text-center">Assign Teacher to Subject</h1>
 

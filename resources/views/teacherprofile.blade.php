@@ -2,21 +2,8 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<div id="main">
-    <div class="header-container">
-        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
-        <h1 class="text-light">Teacher Profile</h1>
-    </div>
-</div>
-
 <style>
-    .header-container {
-        display: flex; 
-        align-items: center; 
-        background-color: #0c3b6d; 
-        color: white;
-        padding: 10px; 
-    }
+
 
     .profile-image {
         width: 180px;
@@ -35,12 +22,55 @@
         cursor: pointer;
     }
 
-    h1 {
-        margin: 0; 
-        font-size: 24px;
+
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+            }
+ 
+    #main {
+        transition: margin-left .3s;
+        padding: 20px;
+    }
+
+    .btn {
+        background-color: #0c3b6d;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #093d5e;
+    }
+
+    .table-responsive {
+        margin-top: 20px;
+    }
+    h1{
+        font-size:17px;
+        font-family:'Arial',sans-serif;
+        margin: 0;
+        margin-left:-15%;
+       
     }
 </style>
 
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open(event)">&#9776;</button>
+        <div class="w3-container" style="margin-left: 15px;">
+            <h1>Teacher Submit Attendance</h1>
+        </div>
+    </div>
+    <div id="main" onclick="w3_close()">
 <section class="container-fluid py-5 bg-custom">
     <div class="row justify-content-center">
         <div class="col-md-9 col-lg-7 col-xl-6">

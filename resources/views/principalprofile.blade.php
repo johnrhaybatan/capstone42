@@ -5,18 +5,20 @@
 <div id="main">
     <div class="header-container">
         <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
-        <h1 class="text-light">Principal Profile</h1>
+        <h1>Principal Profile</h1>
     </div>
 </div>
 
 <style>
-    .header-container {
-        display: flex; 
-        align-items: center; 
-        background-color: #0c3b6d; 
-        color: white;
-        padding: 10px; 
-    }
+      .header-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(8, 16, 66, 1);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
 
     .profile-image {
         width: 180px;
@@ -37,7 +39,7 @@
 
     h1 {
         margin: 0; 
-        font-size: 24px;
+        font-size: 17px;
     }
 </style>
 

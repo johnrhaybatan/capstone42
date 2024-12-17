@@ -1,6 +1,23 @@
 @include('templates.principalheader')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <style>
+   
+
+
+    .header-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(8, 16, 66, 1);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+    h1 {
+        margin: 0; 
+        font-size: 20px;
+    }
+
     .center {
         text-align: center;
         margin-top: 1rem;
@@ -35,15 +52,31 @@
         padding: 0.5rem;
         box-sizing: border-box;
     }
+    .container{
+        padding:20px;
+    }
+    .container h2{
+        font-size:22px;
+        margin-bottom:3%;
+    }
+    .container h1{
+        margin-bottom:2%;
+ 
+        color:black;
+  
+
+     
+
+    }
 </style>
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>Classload for {{ $selectedSection }} Grade: {{ $selectedGrade }}</h1>
-        </div>
+
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open(event)">&#9776;</button>
+        <h1 style="text-align: center;">Evaluate Grades</h1>
     </div>
+
+    <div id="main" onclick="w3_close()">
 
     <div class="container">
         <h1>Classload</h1>

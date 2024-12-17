@@ -1,15 +1,14 @@
 @include('templates.principalheader')
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1 class="text-light">ASSESSMENT DETAILS</h1>
-        </div>
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <h1>Assessments Overview</h1>
     </div>
+    <div id="main" onclick="w3_close()">
 
-    <div class="container my-5">
-        <h1 class="mb-4 text-center">Assessment Information</h1>
+
+    <div class="container my-4" >
+        <h1 class="mb-2 text-center" style="font-size:24px;">Assessment Information</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -67,7 +66,7 @@
                     value="{{ $assessment->assessment_fee }}" min="0" step="0.01" placeholder="Enter the assessment fee">
             </div>
 
-            <button type="submit" class="btn btn-secondary w-100">Update Assessment</button>
+            <button type="submit" class="btn btn-success w-100">Update Assessment</button>
         </form>
     </div>
 </div>
@@ -75,12 +74,26 @@
 @include('templates.principalfooter')
 
 <style>
-    /* Custom styles for the main container */
-    #main {
-        background-color: #f8f9fa; /* Light background for the main area */
-        padding: 20px;
-        border-radius: 8px;
-    }
+   
+
+#main {
+ padding:0;
+}
+
+.header-container {
+display: flex;
+align-items: center;
+background-color: rgba(8, 16, 66, 1);
+color: white;
+padding: 10px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.header-container h1 {
+    margin: 0;
+    font-size: 17px; /* Increased font size for visibility */
+    flex-grow: 1; /* Allow header to take available space */
+    text-align: left; /* Center the header text */
+}
 
     /* Enhance form styles */
     .form-select, .form-control {

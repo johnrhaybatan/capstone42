@@ -1,28 +1,27 @@
 @include('templates.principalheader')
-
+@include('templates.principalfooter')
 <style>
-    body {
-        background-color: #f7f9fc; /* Light background for better contrast */
+  body {
         font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Light background */
+        margin: 0;
+        padding: 0;
     }
 
-    #main {
-        padding: 20px;
-    }
-
-    .w3-teal {
-        background-color: #007bff; /* Teal background */
-        padding: 10px;
-        border-radius: 0.5rem;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
+    .header-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(8, 16, 66, 1);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
 
     h1 {
-        color: white;
-        margin: 0;
-        font-size: 2.5rem;
+        margin: 0; 
+        font-size: 20px;
     }
+
 
     .container {
         width: 80%;
@@ -85,7 +84,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
+        background-color: rgba(132, 128, 194);
         transition: .4s;
         border-radius: 34px;
     }
@@ -103,7 +102,7 @@
     }
 
     input:checked + .slider {
-        background-color: #007bff;
+        background-color:rgba(37, 176, 39);
     }
 
     input:checked + .slider:before {
@@ -122,7 +121,7 @@
     }
 
     .table th {
-        background-color: #4CAF50;
+        background-color: rgba(8, 16, 66, 1);
         color: white;
         text-transform: uppercase;
     }
@@ -141,13 +140,31 @@
             width: 100%; /* Full width on small screens */
         }
     }
+    #main{
+        padding:10px;
+    }
+    h4{
+        margin-top:10px;
+        margin-bottom:3%;
+        font-size:22px;
+        font-family:'Arial',sans-serif;
+    }
+    .update{
+        background-color:rgba(8, 16, 66, 1);
+        color:white;
+        padding:5px;
+    }
+    .update:hover{
+        background-color:rgba(38, 29, 168);
+    }
 </style>
-
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open(event)">&#9776;</button>
         <h1 style="text-align: center;">Evaluate Grades</h1>
     </div>
+
+    <div id="main" onclick="w3_close()">
+   
 
     <!-- Container for Managing Quarters -->
     <div class="container">
@@ -210,7 +227,7 @@
                 </select>
             </div>
         
-            <button type="submit" class="btn btn-primary">Update Quarters</button>
+            <button type="submit" class="update">Update Quarters</button>
         </form>
     </div>
 

@@ -2,8 +2,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <style>
     .center {
-        text-align: center;
-        margin-top: 1rem;
+        text-align: right;
+        margin-top: 2rem;
+        margin-bottom:2rem;
     }
 
     #toast-container {
@@ -13,15 +14,32 @@
     .uppercase {
         text-transform: uppercase;
     }
+    
+
+    .header-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(8, 16, 66, 1);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+    h1 {
+        margin: 0; 
+        font-size: 20px;
+    }
+    .container{
+        padding:10px;
+    }
 </style>
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>UPDATE CLASSLOAD</h1>
-        </div>
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <h1>Assessments Overview</h1>
     </div>
+    <div id="main" onclick="w3_close()">
+
 
     <div class="container">
         <h1>Update Management</h1>

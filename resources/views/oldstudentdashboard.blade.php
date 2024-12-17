@@ -31,6 +31,7 @@
         margin-bottom: 4px;
     }
 
+
     h1 {
             margin: 0; 
             font-family: 'Arial', sans-serif;
@@ -39,11 +40,11 @@
     h2 {
         font-weight: bold;
         margin: 20px 0 10px 0;
-        color: #333;
+        color: black;
     }
 
     p {
-        color: #555;
+        color: black;
         line-height: 1.6;
     }
 

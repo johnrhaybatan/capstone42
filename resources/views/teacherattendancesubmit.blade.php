@@ -1,12 +1,73 @@
 @include('templates.teacherheader')
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>Teacher Attendance - EDPCODE: {{ $edpcode }}</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+            }
+
+    #mySidebar {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        height: 100%;
+        width: 250px;
+        top: 0;
+        left: 0;
+        background-color: #0c3b6d;
+        color: white;
+        padding-top: 20px;
+        padding-left: 15px;
+        transition: 0.3s;
+        overflow-y: auto;
+    }
+
+    #main {
+        transition: margin-left .3s;
+        padding: 20px;
+    }
+
+    .btn {
+        background-color: #0c3b6d;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #093d5e;
+    }
+
+    .table-responsive {
+        margin-top: 20px;
+    }
+    h1{
+        font-size:17px;
+        font-family:'Arial',sans-serif;
+    }
+</style>
+
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container" style="margin-left: 15px;">
+            <h1 style="margin: 0;">Teacher Attendance - EDPCODE: {{ $edpcode }}</h1>
         </div>
     </div>
+    <div id="main" onclick="w3_close()">
+
 
     <div class="container" style="width: 80%; height: auto; border: 1px solid #ccc; padding: 20px;">
         <form action="/teacherattendance" method="POST">

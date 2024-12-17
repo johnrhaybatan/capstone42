@@ -1,14 +1,5 @@
 @include('templates.principalheader')
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>Available Sections</h1>
-        </div>
-    </div>
-
-    <div class="container">
         <style>
             body {
                 font-family: 'Arial', sans-serif;
@@ -17,21 +8,13 @@
                 padding: 20px;
             }
 
-            .container {
-                max-width: 1300px;
-                margin: auto;
-                background: white;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            }
 
             h1 {
                 text-align: center;
-                color: #2c3e50;
-                margin-bottom: 20px;
-                font-size: 28px;
-                font-weight: 600;
+                color: white;
+                margin-left: -15px;
+                font-size: 17px;
+             
             }
 
             .alert {
@@ -110,7 +93,40 @@
                     font-size: 14px;
                 }
             }
+            body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+    }
+    h2{
+        font-size:24px;
+        padding:10px;
+      
+    }
+    #main{
+        padding:10px;
+    }
         </style>
+        
+
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container" style="margin-left: 15px;">
+            <h1>Available Sections</h1>
+        </div>
+    </div>
+    <div id="main" onclick="w3_close()">
+     
 
         @if (session('success'))
             <div class="alert alert-success">   

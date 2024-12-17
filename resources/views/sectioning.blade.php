@@ -1,14 +1,43 @@
 @include('templates.principalheader')
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white; /* Consistent background */
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(8, 16, 66, 1);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>Sectioning</h1>
-        </div>
+    .w3-teal {
+        background-color: #0c3b6d; /* Match header color */
+    }
+
+    h1 {
+        margin: 0; 
+        font-size: 17px;
+    }
+    .container{
+        padding:50px;
+        
+    }
+
+</style>
+
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open(event)">&#9776;</button>
+        <h1>Sectioning</h1>
     </div>
+    <div id="main" onclick="w3_close()">
 
-    <div class="container" style="width: 80%; height: auto; border: 1px solid #ccc; padding: 20px;">
+    <div class="container">
         <form action="/sectioning" method="GET">
             @csrf
             <div class="fee-list">

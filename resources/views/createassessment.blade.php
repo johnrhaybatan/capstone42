@@ -1,19 +1,95 @@
 @include('templates.accountingheader')
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1 class="text-light">ASSESSMENT</h1>
+<style>
+  body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+    }
+
+    #mySidebar {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        height: 100%;
+        width: 250px;
+        top: 0;
+        left: 0;
+        background-color: #0c3b6d;
+        color: white;
+        padding-top: 20px;
+        padding-left: 15px;
+        transition: 0.3s;
+        overflow-y: auto;
+    }
+    .header{
+        font-size:17px;
+       
+    }
+    /* Enhance form styles */
+    .form-select, .form-control {
+        transition: border-color 0.2s;
+    }
+
+    .form-select:focus, .form-control:focus {
+        border-color: #007bff; /* Change border color on focus */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft shadow on focus */
+    }
+
+    /* Button styles */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+        .container {
+            padding: 10px; /* Reduced padding for small screens */
+        }
+    }
+    .headerbody{
+        text-align:center;
+        background-color:rgba(8, 16, 66, 1); 
+        color:white;
+        font-size:22px;
+        padding:10px;
+        font-family:'Arial',sans-serif;
+        width:24%;
+    }
+</style>
+
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container" style="margin-left: 15px;">
+            <h1 class="header">Create ASsessment</h1>
         </div>
     </div>
+    <div id="main" onclick="w3_close()">
+     
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <div class="container my-5">
-        <h1 class="mb-4 text-center">Assessment Creator</h1>
-
+       
+    <h1 class="headerbody">Assessment Creator</h1>
         <form action="{{ route('assessment.post') }}" method="POST" id="assessment-form" class="shadow p-4 rounded bg-light">
             @csrf <!-- CSRF Token -->
 
@@ -67,7 +143,7 @@
                 <input type="number" id="assessment-fee" name="assessment_fee" class="form-control" min="0" step="0.01" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Create Assessment</button>
+            <button type="submit" class="btn btn-success w-100">Create Assessment</button>
         </form>
     </div>
 
@@ -94,40 +170,3 @@
 </div>
 
 @include('templates.accountingfooter')
-
-<style>
-    /* Custom styles for the main container */
-    #main {
-        background-color: #f8f9fa; /* Light background for the main area */
-        padding: 20px;
-        border-radius: 8px;
-    }
-
-    /* Enhance form styles */
-    .form-select, .form-control {
-        transition: border-color 0.2s;
-    }
-
-    .form-select:focus, .form-control:focus {
-        border-color: #007bff; /* Change border color on focus */
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft shadow on focus */
-    }
-
-    /* Button styles */
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #004085;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 576px) {
-        .container {
-            padding: 10px; /* Reduced padding for small screens */
-        }
-    }
-</style>

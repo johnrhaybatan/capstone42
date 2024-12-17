@@ -1,12 +1,81 @@
 @include('templates.cashierheader')
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>PENDING PAYMENTS</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+            }
+
+    
+
+    #main {
+        transition: margin-left .3s;
+        padding: 0px;
+    }
+
+    .card {
+        border-radius: 8px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .list-group-item {
+        transition: background-color 0.3s;
+    }
+
+    .list-group-item:hover {
+        background-color: #e9ecef;
+    }
+
+    h1, h4 {
+        margin: 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #0c3b6d;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #093d5e;
+    }
+    h1{
+        font-size:17px;
+    }
+</style>
+
+ <div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container" style="margin-left: 15px;">
+            <h1>Pending Payments</h1>
         </div>
     </div>
+    <div id="main" onclick="w3_close()">
 
     <div class="container" style="width: 80%; border: 1px solid #ccc; padding: 20px;">
         <form action="/cashierstudentfee" method="POST">

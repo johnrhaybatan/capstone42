@@ -1,12 +1,72 @@
-    @include('templates.cashierheader')
+@include('templates.cashierheader')
 
-<div id="main">
-    <div class="w3-teal">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-        <div class="w3-container">
-            <h1>APPROVED PAYMENTS</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        display: flex; 
+        align-items: center; 
+        background-color: rgba(8, 16, 66, 1); 
+        color:white;
+        padding: 10px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+            }
+
+    #mySidebar {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        height: 100%;
+        width: 250px;
+        top: 0;
+        left: 0;
+        background-color: #0c3b6d;
+        color: white;
+        padding-top: 20px;
+        padding-left: 15px;
+        transition: 0.3s;
+        overflow-y: auto;
+    }
+
+    #main {
+        transition: margin-left .3s;
+        padding:0px;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    .btn-info:hover {
+        background-color: #138496;
+        border-color: #117a8b;
+    }
+    h1{
+        margin-left:-15px;
+        margin-top:12px;
+            font-family: 'Arial', sans-serif;
+            font-size: 17px;
+    }
+</style>
+
+
+<div class="header-container">
+        <button id="openNav" class="w3-button w3-xlarge nav-button" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container" style="margin-left: 15px;">
+            <h1>Approved Payments</h1>
         </div>
     </div>
+    <div id="main" onclick="w3_close()">
 
     <div class="container" style="width: 80%; height: auto; border: 1px solid #ccc; padding: 20px;">
         <form action="/approvedpayment" method="GET">
@@ -18,7 +78,7 @@
                             <input type="text" class="form-control" placeholder="Search..." aria-label="Search"
                                 name="search" id="searchInput" onkeyup="filterTable()">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="submit">Refresh Search</button>
+                                <button class="btn btn-outline-secondary" type="submit" >Refresh Search</button>
                             </div>
                         </div>
                     </div>
